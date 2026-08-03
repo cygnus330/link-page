@@ -46,11 +46,11 @@
 
 .profile-name {
   font-size: 40px;
-  margin: 32px 0;
+  margin: 28px 0;
 
   @media (max-width: 1024px) {
     font-size: 30px;
-    margin: 20px 0;
+    margin: 16px 0;
   }
 }
 
