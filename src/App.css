@@ -27,6 +27,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .theme-btn img {
@@ -34,15 +35,206 @@
   height: 24px;
 }
 
-/* .profile-name {
-  font-size: 56px;
-  margin: 32px 0;
+/* ==========================================================================
+   Gateway Lock Screen Styles
+   ========================================================================== */
 
-  @media (max-width: 1024px) {
-    font-size: 40px;
-    margin: 20px 0;
+.gateway-card {
+  width: 100%;
+  max-width: 440px;
+  margin: 4vh auto 0 auto;
+  padding: 40px 24px 36px 24px;
+  box-sizing: border-box;
+
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  box-shadow: var(--card-shadow);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  animation: fadeInUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .gateway-card {
+    padding: 32px 16px 28px 16px;
+    margin-top: 3vh;
+    border-radius: 20px;
   }
-} */
+}
+
+.gateway-badge {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, rgba(255, 187, 184, 0.45) 0%, rgba(189, 138, 255, 0.45) 100%);
+  box-shadow: 0 4px 14px rgba(189, 138, 255, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gateway-lock-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--text-title);
+}
+
+.gateway-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-title);
+  margin: 0 0 8px 0;
+  letter-spacing: -0.3px;
+}
+
+.gateway-desc {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.5;
+  margin: 0 0 24px 0;
+  max-width: 280px;
+}
+
+.gateway-turnstile-wrapper {
+  width: 100%;
+  min-height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px 0 16px 0;
+}
+
+.turnstile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+  min-height: 65px;
+}
+
+.gateway-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-light);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.gateway-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(189, 138, 255, 0.25);
+  border-top-color: #bd8aff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.gateway-error {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px 16px;
+  box-sizing: border-box;
+  border-radius: 14px;
+
+  background-color: var(--error-bg);
+  border: 1px solid var(--error-border);
+  color: var(--error-text);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: fadeInUp 0.3s ease forwards;
+}
+
+.gateway-error-text {
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.retry-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 18px;
+  border-radius: 10px;
+  border: none;
+
+  background-color: var(--text-title);
+  color: var(--bg);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.retry-btn:hover {
+  opacity: 0.9;
+}
+
+.retry-btn:active {
+  transform: scale(0.96);
+}
+
+.retry-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* ==========================================================================
+   Unlock & Entrance Animations
+   ========================================================================== */
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.unlocked-content {
+  animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: opacity, transform;
+}
+
+/* ==========================================================================
+   Profile & Header Styles (100% Preserved)
+   ========================================================================== */
 
 .profile-name {
   font-size: 40px;
@@ -65,6 +257,10 @@
 .profile-bio {
   margin-bottom: 5%;
 }
+
+/* ==========================================================================
+   Link List & Gradient Buttons (100% Preserved)
+   ========================================================================== */
 
 .link-list {
   width: 100%;
@@ -141,13 +337,11 @@
   align-content: center;
 
   text-decoration: none;
-  /* color: #252525; */
   font-weight: 600;
   font-size: 17px;
 }
 
 .link-text:hover {
-  /* color: #000000; */
   font-weight: 700;
 }
 
@@ -169,6 +363,10 @@
 
   justify-content: center;
 }
+
+/* ==========================================================================
+   Dark Mode Overrides
+   ========================================================================== */
 
 body[data-theme='dark'] {
   .theme-btn {
@@ -197,4 +395,4 @@ body[data-theme='dark'] {
   .link-img {
     filter: invert(80%);
   }
-}
+}
