@@ -24,7 +24,6 @@ export const SENSITIVE_PATTERNS = [
   { name: 'Profile Name', pattern: /Junhyeok\s+Choi/i, severity: 'CRITICAL' },
   { name: 'Profile Nickname (cygnus330)', pattern: /cygnus330/i, severity: 'CRITICAL' },
   { name: 'Profile Nickname (염화은)', pattern: /염화은/i, severity: 'CRITICAL' },
-  { name: 'Profile Nickname (자몽라임소다)', pattern: /자몽라임소다/i, severity: 'CRITICAL' },
   { name: 'Profile Bio (바이브코더)', pattern: /바이브코더/i, severity: 'HIGH' },
   { name: 'Profile Bio (약대생)', pattern: /약대생/i, severity: 'HIGH' },
   { name: 'Personal Blog URL', pattern: /blog\.naver\.com\/choigriaffe/i, severity: 'CRITICAL' },
