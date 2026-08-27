@@ -10,7 +10,7 @@ export const SECURE_PAYLOAD = {
   success: true,
   profile: {
     name: 'Junhyeok Choi',
-    nickname: 'cygnus330 / 염화은 / 자몽라임소다',
+    nickname: 'cygnus330 / 염화은',
     bio: '바이브코더 약대생',
     avatar: '/assets/profile.jpg',
   },
